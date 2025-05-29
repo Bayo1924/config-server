@@ -1,3 +1,9 @@
-example:
+spring:
     application:
-        name: product-service-from-config
+        name: product-service
+server:
+    port: 8001
+eureka:
+    client:
+        serviceUrl:
+            defaultZone: http://localhost:8761/eureka
