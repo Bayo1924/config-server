@@ -1,0 +1,3 @@
+example:
+    application:
+        name: product-service-from-config
