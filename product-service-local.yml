@@ -1,9 +1,13 @@
 spring:
     application:
-        name: product-service-from-config
+        name: product-service
 server:
-    port: 8002
+    port: ${PORT:0}
 eureka:
     client:
         serviceUrl:
             defaultZone: http://localhost:8761/eureka
+    instance:
+        # - Esto le dice al cliente Eureka que **prefiera registrar su dirección IP en lugar del hostname**.
+        prefer-ip-address: true
+        instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
